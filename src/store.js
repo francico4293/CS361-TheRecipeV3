@@ -7,7 +7,11 @@ import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { 
     recipeResultsReducer,
-    recipeResultsPageReducer
+    recipeResultsPageReducer,
+    recipeCardReducer,
+    recipeNutritionReducer,
+    recipeTasteReducer,
+    similarRecipesReducer
 } from './reducers/recipeReducers';
 import { userReducer } from './reducers/userReducers';
 import { RESULTS, PAGE } from './constants/recipeConstants'
@@ -16,7 +20,11 @@ import { DATA, LOGGED_IN } from './constants/userConstants';
 const reducer = combineReducers({
     recipeResults: recipeResultsReducer,
     recipeResultsPage: recipeResultsPageReducer,
-    user: userReducer
+    user: userReducer,
+    recipeCard: recipeCardReducer,
+    recipeNutrition: recipeNutritionReducer,
+    recipeTaste: recipeTasteReducer,
+    similarRecipes: similarRecipesReducer
 });
 
 const resultsFromStorage = sessionStorage.getItem(RESULTS) 

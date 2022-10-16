@@ -275,6 +275,60 @@ padding-right: 5px;
   background-color: #ede0d4;
 }
 
+/* Styles for recipe page */
+#recipe-container {
+  background-image: 
+      linear-gradient(
+      rgba(0, 0, 0, 0.25),
+      rgba(0, 0, 0, 0.25)),
+      url('/Users/colinfrancis/Documents/CS361/personal-project/frontend/public/img/background-1.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+#recipe-container h2 {
+  color: white;
+  font-size: 4vw;
+  margin-top: 30px;
+}
+
+#inner-container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+#inner-container div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 35%;
+  padding-left: 30px;
+}
+
+#recipe-taste {
+  min-width: 100%;
+  object-fit: contain;
+  background-color: white;
+  border-radius: 50px;
+}
+
+#recipe-card {
+  width: 65%;
+  padding-right: 30px;
+}
+
+#recipe-nutrition {
+  width: 65%;
+}
+
 /* Styles for footer */
 #footer-container {
   display: flex;

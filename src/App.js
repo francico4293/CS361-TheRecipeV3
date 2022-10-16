@@ -8,6 +8,7 @@ import Home from './pages/Home';
 import Faq from './pages/Faq';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
+import Recipe from './pages/Recipe';
 import './App.css';
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
         <Route path='/faq' element={<Faq/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/signup' element={<Signup/>}/>
+        <Route path='/recipes/:recipeId' element={<Recipe/>}/>
       </Routes>
     </Router>
   );

@@ -6,6 +6,12 @@ import Popover from 'react-bootstrap/Popover';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Stack from 'react-bootstrap/Stack';
 import Button from 'react-bootstrap/Button';
+import { 
+    recipeCardActions,
+    recipeNutritionActions,
+    recipeTasteActions,
+    similarRecipesActions
+} from '../actions/recipeActions';
 import { userRecipeFavoriteActions } from '../actions/userActions';
 
 const RecipeResult = ({ result }) => {
@@ -18,6 +24,14 @@ const RecipeResult = ({ result }) => {
 
     const dispatchRecipeFavoriteActions = () => {
         dispatch(userRecipeFavoriteActions(user.data.id, result.id, result.title, result.image));
+    }
+
+    const dispatchExploreRecipeActions = () => {
+        navigate(`/recipes/${result.id}`)
+        dispatch(recipeCardActions(result.id));
+        dispatch(recipeNutritionActions(result.id));
+        dispatch(recipeTasteActions(result.id));
+        dispatch(similarRecipesActions(result.id));
     }
 
     const popover = (
@@ -51,7 +65,7 @@ const RecipeResult = ({ result }) => {
             );
         } else { 
             return (
-                <Button variant='primary' onClick={() => navigate(`/recipes/${result.id}`)}>Explore Recipe</Button>
+                <Button variant='primary' onClick={() => dispatchExploreRecipeActions()}>Explore Recipe</Button>
             );
         }
     }
